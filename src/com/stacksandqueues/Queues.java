@@ -18,7 +18,10 @@ public class Queues {
     {
         return list.getFirst();
     }
-
+    public Object poll()
+    {
+        return list.removeFirst();
+    }
     //Printing the values of Queue
     public void printQueue()
     {
@@ -47,7 +50,18 @@ public class Queues {
         //Printing the top element of stack
         System.out.println("Top element of Queue is : "+queue.peak());
         queue.printQueue();
+        //Printing top element and dequeue it from Queue unless it is empty
+        while (!list.isEmpty())
+        {
+            System.out.println("Top element present in Queue is : "+queue.peak());
+            System.out.println("Dequeue top element from Queue : "+queue.poll());
+            System.out.println("Printing the Queue");
+            queue.printQueue();
+            System.out.println();
+        }
 
     }
-}
+
+    }
+
 
